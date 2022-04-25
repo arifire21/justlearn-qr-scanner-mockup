@@ -13,6 +13,8 @@
     <!-- <script src="app.js"></script> -->
 
     <div id="qr-reader" style="width: 600px"></div>
+    <h2>Result</h2>
+    <p id="result">QR contents go here</p>
 
     <script>
         // function onScanFailure(error) {
@@ -23,6 +25,7 @@
 
         function onScanSuccess(decodedText, decodedResult) {
             console.log(`Code scanned = ${decodedText}`, decodedResult);
+            document.getElementById("result").innerText = decodedText;
         }
         var html5QrcodeScanner = new Html5QrcodeScanner(
             "qr-reader", { fps: 10, qrbox: 250 });
